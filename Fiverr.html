@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce | Exaucé</title>
+    <style>
+        /* DESIGN SOMBRE MODERNE */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #161b22;
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid #30363d;
+        }
+
+        h1 { color: #58a6ff; margin: 0; }
+        .tagline { color: #8b949e; font-style: italic; }
+
+        .container { padding: 20px; max-width: 1000px; margin: auto; }
+        
+        .intro { 
+            text-align: center; 
+            background: #161b22;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+        }
+
+        .grille {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .carte {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .carte:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+        }
+
+        .prix {
+            display: block;
+            font-size: 1.5rem;
+            color: #3fb950;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        /* BOUTON WHATSAPP */
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .btn-whatsapp:hover { background-color: #128c7e; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Commerce Électronique</h1>
+        <p class="tagline">Gagner de l'argent par une goutte</p>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>À propos du projet</h2>
+            <p>E_commerce est une plateforme dédiée à la vente et à la promotion d'articles en ligne. Contactez-nous pour booster vos ventes !</p>
+            <a href="https://wa.me/243842317817" class="btn-whatsapp">Me contacter sur WhatsApp</a>
+        </section>
+
+        <section id="liste-produits" class="grille">
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 E-commerce - Contact : 0842317817</p>
+    </footer>
+
+    <script>
+        const services = [
+            { nom: "Visibilité Accrue", desc: "Vos articles en avant sur la plateforme.", prix: "10$" },
+            { nom: "Gestion Vendeur", desc: "Tableau de bord pour vos campagnes.", prix: "Gratuit" },
+            { nom: "Analyse Pro", desc: "Suivez vos performances réelles.", prix: "15$" }
+        ];
+
+        const conteneur = document.getElementById('liste-produits');
+
+        services.forEach(s => {
+            conteneur.innerHTML += `
+                <div class="carte">
+                    <h3>${s.nom}</h3>
+                    <p>${s.desc}</p>
+                    <span class="prix">${s.prix}</span>
+                    <a href="https://wa.me/243842317817?text=Bonjour, je suis intéressé par ${s.nom}" class="btn-whatsapp">Commander</a>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
+
